@@ -12,26 +12,21 @@ namespace ByteBank
             CalcularMaiorNumero Calcular = new CalcularMaiorNumero();
 
 
-            Funcionario Carlos = new Funcionario();
+            Funcionario Carlos = new Funcionario("444.444.222.01", 1000.00);
             Carlos.Nome = "Carlos";
-            Carlos.CPF = "444.444.222.01";
-            Carlos.Salario = 1000.00;
+            Carlos.AumentarSalario();
 
             Gerenciador.Registrar(Carlos);
             Console.WriteLine($"Bonificação {Carlos.Nome}: {Carlos.GetBonificacao()}");
 
-            Diretor Roberta = new Diretor();
+            Diretor Roberta = new Diretor("111.111.111.11");
             Roberta.Nome = "Roberta";
-            Roberta.CPF = "111.111.111.11";
-            Roberta.Salario = 5000.00;
 
             Gerenciador.Registrar(Roberta);
             Console.WriteLine($"Bonificação {Roberta.Nome}: {Roberta.GetBonificacao()}");
 
-            Funcionario Pedro = new Diretor();
+            Funcionario Pedro = new Diretor("222.222.222.22");
             Pedro.Nome = "Pedro";
-            Pedro.CPF = "222.222.222.22";
-            Pedro.Salario = 10000.00;
 
             Gerenciador.Registrar(Pedro);
 
@@ -39,6 +34,7 @@ namespace ByteBank
 
             Console.WriteLine($"O maior é: {Calcular.Maior(3,7,8)}");
             Console.WriteLine($"O maior é: {Calcular.MaiorNew(3, 7, 8)}");
+            Console.WriteLine($"Total de Funcionários: {Funcionario.TotalFuncionarios}");
 
         }
     }

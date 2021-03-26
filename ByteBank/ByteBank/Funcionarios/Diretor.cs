@@ -12,7 +12,7 @@ namespace ByteBank.Funcionarios
         #endregion
 
         #region Construtor
-        public Diretor()
+        public Diretor(string cpf ) : base(cpf,5000)
         {
 
         }
@@ -23,7 +23,13 @@ namespace ByteBank.Funcionarios
         public override double GetBonificacao()
         {
             //Fazendo Referencia da nossa classe base
-            return Salario + base.GetBonificacao();
+            //return Salario + base.GetBonificacao();
+            return Salario * 0.50;
+        }
+
+        public override void AumentarSalario()
+        {
+            Salario *= 1.15;
         }
 
         #endregion
