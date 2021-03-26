@@ -1,4 +1,5 @@
-﻿using ByteBank.Funcionarios;
+﻿using ByteBank.Exemplos;
+using ByteBank.Funcionarios;
 using System;
 
 namespace ByteBank
@@ -8,6 +9,8 @@ namespace ByteBank
         static void Main(string[] args)
         {
             GerenciadorBonificacao Gerenciador = new GerenciadorBonificacao();
+            CalcularMaiorNumero Calcular = new CalcularMaiorNumero();
+
 
             Funcionario Carlos = new Funcionario();
             Carlos.Nome = "Carlos";
@@ -24,6 +27,10 @@ namespace ByteBank
             Gerenciador.Registrar(Roberta);
             
             Console.WriteLine($"Total de bonificação: {Gerenciador.GetTotalBonificacao()}");
+
+            Console.WriteLine($"O maior é: {Calcular.Maior(3,7,8)}");
+            Console.WriteLine($"O maior é: {Calcular.MaiorNew(3, 7, 8)}");
+
         }
     }
 }
