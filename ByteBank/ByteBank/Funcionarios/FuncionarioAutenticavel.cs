@@ -1,17 +1,19 @@
-﻿using ByteBank.Funcionarios;
+﻿using ByteBank.Sistemas;
 
-namespace ByteBank.Sistemas
+namespace ByteBank.Funcionarios
 {
-    public abstract class Autenticavel : Funcionario
-    { 
+    public abstract class FuncionarioAutenticavel : Funcionario , IAutenticavel
+    {
         #region Atributos
         public string Senha { get; set; }
         #endregion
 
-        public Autenticavel(string cpf, double salario) : base(cpf,salario)
+        #region Construtor
+        public FuncionarioAutenticavel(string cpf, double salario) : base(cpf,salario)
         {
 
         }
+        #endregion
 
         #region Métodos
         public bool Autenticar(string p_senha)

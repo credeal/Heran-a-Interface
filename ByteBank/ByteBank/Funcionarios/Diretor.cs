@@ -2,11 +2,8 @@
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Autenticavel
+    public class Diretor : FuncionarioAutenticavel
     {
-        #region Atributos
-        #endregion
-
         #region Construtor
         public Diretor(string cpf) : base(cpf,5000)
         {
@@ -27,8 +24,6 @@ namespace ByteBank.Funcionarios
         {
             Salario *= 1.15;
         }
-
-      
 
 
         #endregion

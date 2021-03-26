@@ -26,7 +26,9 @@ namespace ByteBank
             Camila.Senha = "dcba";
             Camila.Nome = "Camila";
 
+            ParceiroComercial Basf = new ParceiroComercial("123");
 
+            sistema.Logar(Basf, "123");
             sistema.Logar(Roberta, "abcd");
             sistema.Logar(Camila, "dcba");
              
