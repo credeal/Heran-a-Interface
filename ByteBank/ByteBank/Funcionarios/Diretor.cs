@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor
+    public class Diretor : Funcionario
     {
         #region Atributos
-        public string Nome { get; set; }
-        public string CPF { get; set; }
-        public double Salario { get; set; }
         #endregion
 
         #region Construtor
@@ -22,10 +19,13 @@ namespace ByteBank.Funcionarios
         #endregion
 
         #region Métodos
-        public double GetBonificacao()
+
+        public override double GetBonificacao()
         {
-            return Salario;
+            //Fazendo Referencia da nossa classe base
+            return Salario + base.GetBonificacao();
         }
+
         #endregion
     }
 }

@@ -18,6 +18,7 @@ namespace ByteBank
             Carlos.Salario = 1000.00;
 
             Gerenciador.Registrar(Carlos);
+            Console.WriteLine($"Bonificação {Carlos.Nome}: {Carlos.GetBonificacao()}");
 
             Diretor Roberta = new Diretor();
             Roberta.Nome = "Roberta";
@@ -25,7 +26,15 @@ namespace ByteBank
             Roberta.Salario = 5000.00;
 
             Gerenciador.Registrar(Roberta);
-            
+            Console.WriteLine($"Bonificação {Roberta.Nome}: {Roberta.GetBonificacao()}");
+
+            Funcionario Pedro = new Diretor();
+            Pedro.Nome = "Pedro";
+            Pedro.CPF = "222.222.222.22";
+            Pedro.Salario = 10000.00;
+
+            Gerenciador.Registrar(Pedro);
+
             Console.WriteLine($"Total de bonificação: {Gerenciador.GetTotalBonificacao()}");
 
             Console.WriteLine($"O maior é: {Calcular.Maior(3,7,8)}");
