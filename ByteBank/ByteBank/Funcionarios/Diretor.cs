@@ -1,6 +1,12 @@
-﻿namespace ByteBank.Funcionarios
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ByteBank.Funcionarios
 {
-    public class Funcionario
+    public class Diretor
     {
         #region Atributos
         public string Nome { get; set; }
@@ -9,16 +15,16 @@
         #endregion
 
         #region Construtor
-        public Funcionario()
+        public Diretor()
         {
-           
+
         }
         #endregion
 
         #region Métodos
         public double GetBonificacao()
         {
-            return Salario * 0.10;
+            return Salario;
         }
         #endregion
     }
