@@ -1,6 +1,6 @@
 ﻿namespace ByteBank.Funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {
         #region Atributos
         public string Nome { get; set; }
@@ -30,6 +30,8 @@
             //Salario = Salario * 1.1;
             Salario *= 1.1;
         }
+
+     
         #endregion
     }
 }

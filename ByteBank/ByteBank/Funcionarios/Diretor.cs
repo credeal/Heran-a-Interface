@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ByteBank.Sistemas;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Funcionario
+    public class Diretor : Autenticavel
     {
         #region Atributos
         #endregion
 
         #region Construtor
-        public Diretor(string cpf ) : base(cpf,5000)
+        public Diretor(string cpf) : base(cpf,5000)
         {
-
+            
         }
         #endregion
 
@@ -31,6 +27,9 @@ namespace ByteBank.Funcionarios
         {
             Salario *= 1.15;
         }
+
+      
+
 
         #endregion
     }

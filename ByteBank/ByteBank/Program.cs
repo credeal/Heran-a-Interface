@@ -1,5 +1,6 @@
 ﻿using ByteBank.Exemplos;
 using ByteBank.Funcionarios;
+using ByteBank.Sistemas;
 using System;
 
 namespace ByteBank
@@ -8,34 +9,53 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            GerenciadorBonificacao Gerenciador = new GerenciadorBonificacao();
-            CalcularMaiorNumero Calcular = new CalcularMaiorNumero();
+            //CalcularBonificacao();
+            UsarSistema();
 
+        }
 
-            Funcionario Carlos = new Funcionario("444.444.222.01", 1000.00);
-            Carlos.Nome = "Carlos";
-            Carlos.AumentarSalario();
+        public static void UsarSistema()
+        {
+            SistemaInterno sistema = new SistemaInterno();
 
-            Gerenciador.Registrar(Carlos);
-            Console.WriteLine($"Bonificação {Carlos.Nome}: {Carlos.GetBonificacao()}");
-
-            Diretor Roberta = new Diretor("111.111.111.11");
+            Diretor Roberta = new Diretor("222.222.222.22");
+            Roberta.Senha = "abcd";
             Roberta.Nome = "Roberta";
 
-            Gerenciador.Registrar(Roberta);
-            Console.WriteLine($"Bonificação {Roberta.Nome}: {Roberta.GetBonificacao()}");
+            GerenteDeConta Camila = new GerenteDeConta("444.444.444.44");
+            Camila.Senha = "dcba";
+            Camila.Nome = "Camila";
 
-            Funcionario Pedro = new Diretor("222.222.222.22");
+
+            sistema.Logar(Roberta, "abcd");
+            sistema.Logar(Camila, "dcba");
+             
+
+        }
+
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
+
+            Funcionario Pedro = new Designer("111.111.111.11");
             Pedro.Nome = "Pedro";
 
-            Gerenciador.Registrar(Pedro);
+            Funcionario Roberta = new Diretor("222.222.222.22");
+            Roberta.Nome = "Roberta";
 
-            Console.WriteLine($"Total de bonificação: {Gerenciador.GetTotalBonificacao()}");
+            Funcionario Igor = new Auxiliar("333.333.333.33");
+            Igor.Nome = "Igor";
 
-            Console.WriteLine($"O maior é: {Calcular.Maior(3,7,8)}");
-            Console.WriteLine($"O maior é: {Calcular.MaiorNew(3, 7, 8)}");
-            Console.WriteLine($"Total de Funcionários: {Funcionario.TotalFuncionarios}");
+            Funcionario Camila = new GerenteDeConta("444.444.444.44");
+            Camila.Nome = "Camila";
 
+
+            gerenciador.Registrar(Pedro);
+            gerenciador.Registrar(Roberta);
+            gerenciador.Registrar(Igor);
+            gerenciador.Registrar(Camila);
+
+            Console.WriteLine($"Total de bonificação do mês: R$ {gerenciador.GetTotalBonificacao()}");
         }
     }
 }
